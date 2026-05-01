@@ -8,14 +8,10 @@ version = "0.1.0"
 description = "Small smoke-test target repository for Daedalus workflows."
 requires-python = ">=3.10"
 readme = "README.md"
-dependencies = []
-
-[project.optional-dependencies]
-test = ["pytest"]
+dependencies = ["pytest"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-
