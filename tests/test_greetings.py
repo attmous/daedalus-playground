@@ -1,0 +1,10 @@
+from daedalus_playground import greeting
+
+
+def test_greeting_uses_default_name() -> None:
+    assert greeting() == "Hello, Daedalus!"
+
+
+def test_greeting_trims_custom_name() -> None:
+    assert greeting("  Hermes  ") == "Hello, Hermes!"
+
