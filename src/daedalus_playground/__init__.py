@@ -1,4 +1,3 @@
-from .greetings import greeting
+from .greetings import greeting, salutation
 
-__all__ = ["greeting"]
-
+__all__ = ["greeting", "salutation"]
