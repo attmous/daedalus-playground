@@ -26,5 +26,14 @@ def test_cli_reports_unknown_greeting_type(capsys) -> None:
     assert exit_code != 0
     assert captured.out == ""
     assert "Unknown greeting type: unknown." in captured.err
-    assert "greeting" in captured.err
-    assert "salutation" in captured.err
+    assert "Available types: greeting, salutation." in captured.err
+
+
+def test_cli_does_not_advertise_template_renderer_as_simple_greeting(capsys) -> None:
+    exit_code = main(["render_greeting_template", "friendly"])
+
+    captured = capsys.readouterr()
+    assert exit_code != 0
+    assert captured.out == ""
+    assert "Unknown greeting type: render_greeting_template." in captured.err
+    assert "Available types: greeting, salutation." in captured.err

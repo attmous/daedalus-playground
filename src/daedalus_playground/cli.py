@@ -1,15 +1,27 @@
 import argparse
+import inspect
 import sys
 from collections.abc import Callable, Sequence
 
 import daedalus_playground
 
 
+def _is_simple_greeting_helper(helper: Callable[..., str]) -> bool:
+    signature = inspect.signature(helper)
+    positional_parameters = [
+        parameter
+        for parameter in signature.parameters.values()
+        if parameter.kind
+        in (parameter.POSITIONAL_ONLY, parameter.POSITIONAL_OR_KEYWORD)
+    ]
+    return len(positional_parameters) == 1
+
+
 def _greeting_helpers() -> dict[str, Callable[[str], str]]:
     helpers = {}
     for name in daedalus_playground.__all__:
         helper = getattr(daedalus_playground, name)
-        if callable(helper):
+        if callable(helper) and _is_simple_greeting_helper(helper):
             helpers[name] = helper
     return helpers
 
