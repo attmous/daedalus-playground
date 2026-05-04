@@ -8,3 +8,6 @@ def test_greeting_uses_default_name() -> None:
 def test_greeting_trims_custom_name() -> None:
     assert greeting("  Hermes  ") == "Hello, Hermes!"
 
+
+def test_greeting_uses_default_for_blank_name() -> None:
+    assert greeting("   ") == "Hello, Daedalus!"
