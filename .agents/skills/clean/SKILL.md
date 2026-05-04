@@ -1,9 +1,9 @@
 ---
-name: prepare-playground
-description: Prepare the daedalus-playground repository for a fresh Sprints smoke test by stopping active Sprints daemons, closing open playground PRs, and removing active workflow labels from open issues.
+name: clean
+description: Clean the daedalus-playground repository before a fresh Sprints smoke test by stopping active Sprints daemons, closing open playground PRs, and removing active workflow labels from open issues.
 ---
 
-# Prepare Playground
+# Clean
 
 Use this skill when starting over a Sprints smoke test in `attmous/daedalus-playground`.
 

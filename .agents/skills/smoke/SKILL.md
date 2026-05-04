@@ -53,7 +53,7 @@ python3 /home/radxa/WS/sprints/sprints_cli.py status --workflow-root "$WORKFLOW_
 ```
 
 If `apply-contract` refuses because active lanes exist, use the
-`prepare-playground` skill first or ask the user whether to force the contract.
+`clean` skill first or ask the user whether to force the contract.
 Do not use `--force` silently.
 
 4. Start or restart the managed services.
@@ -122,6 +122,6 @@ Include:
 
 ## When Starting Over
 
-Run the `prepare-playground` skill first when the user asks to clean before a
+Run the `clean` skill first when the user asks to clean before a
 new smoke. That skill stops services, closes open PRs, and removes active labels
 without deleting workflow contracts or runtime state unless explicitly asked.
