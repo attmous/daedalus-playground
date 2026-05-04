@@ -23,14 +23,15 @@ intake:
     - blocked
     - needs-human
     - done
-    max-per-tick: 1
+    max-per-tick: 3
 code-host:
   kind: github
   github_slug: attmous/daedalus-playground
 concurrency:
-  max-active-lanes: 1
-  max-implementers: 1
-  max-reviewers: 1
+  max-lanes: 3
+  actors:
+    implementer: 3
+    reviewer: 3
   per-lane-lock: true
 recovery:
   running-stale-seconds: 1800
