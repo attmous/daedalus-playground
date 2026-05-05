@@ -1,6 +1,6 @@
-# Daedalus Playground
+# Playground
 
-Small target repository for smoke testing Daedalus workflow onboarding.
+Small target repository for smoke testing Spirnts workflow onboarding.
 
 The code is intentionally simple: a tiny Python package under `src/` plus one
 pytest suite. Daedalus workflow smoke tests can safely create issues, bootstrap a
