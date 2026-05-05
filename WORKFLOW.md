@@ -23,15 +23,15 @@ intake:
     - blocked
     - needs-human
     - done
-    max-per-tick: 3
+    max-per-tick: 5
 code-host:
   kind: github
   github_slug: attmous/playground
 concurrency:
-  max-lanes: 3
+  max-lanes: 5
   actors:
-    implementer: 3
-    reviewer: 3
+    implementer: 5
+    reviewer: 5
   per-lane-lock: true
 recovery:
   running-stale-seconds: 1800
