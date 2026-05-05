@@ -39,17 +39,18 @@ pytest
 
 This repository is bootstrapped with `WORKFLOW.md` for the Sprints
 `change-delivery` workflow. Create or reuse a small GitHub issue with the
-`active-lane` and `sprints-smoke` labels, then validate the contract:
-
-```bash
-hermes sprints validate
-```
-
-For a local parser/runtime check when the Hermes top-level plugin command is not
-available, invoke the plugin CLI directly:
+`active-lane` and `sprints-smoke` labels, then validate the contract with the
+installed plugin CLI:
 
 ```bash
 python3 ~/.hermes/plugins/sprints/sprints_cli.py validate --format json
+```
+
+When the host Hermes build exposes plugin CLI commands, the equivalent shortcut
+is:
+
+```bash
+hermes sprints validate
 ```
 
 Good smoke issues are small, testable changes such as adding another greeting
