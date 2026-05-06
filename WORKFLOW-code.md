@@ -162,8 +162,8 @@ Execution loop:
 7. Repeat implementation, validation, commit, and push until no actionable
    feedback remains.
 8. Merge only when merge authority is clear.
-9. When merging, open and follow `.codex/skills/land/SKILL.md`; do not call
-   merge mechanics outside the land skill.
+9. When merging, follow the bundled `land` skill included in this prompt; do
+   not call merge mechanics outside the land skill.
 10. After successful merge, remove `in-progress` and add `done`.
 
 Completion bar:
