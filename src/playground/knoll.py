@@ -2,6 +2,7 @@ def dependency_depths(
     graph: dict[str, list[str] | tuple[str, ...]],
 ) -> dict[str, int]:
     """Return the longest dependency-chain depth for each node in graph."""
+    # Normalize dependencies so dependency-only nodes can be traversed like keys.
     dependencies_by_node: dict[str, tuple[str, ...]] = {
         node: tuple(dependencies) for node, dependencies in graph.items()
     }
@@ -10,6 +11,7 @@ def dependency_depths(
             dependencies_by_node.setdefault(dependency, ())
 
     depths: dict[str, int] = {}
+    # Track the DFS path separately from completed nodes to catch back edges.
     visiting: set[str] = set()
     visited: set[str] = set()
 
@@ -21,6 +23,7 @@ def dependency_depths(
 
         visiting.add(node)
         dependencies = dependencies_by_node[node]
+        # A node's depth is one more than its deepest direct dependency.
         if dependencies:
             depth = 1 + max(depth_for(dependency) for dependency in dependencies)
         else:
