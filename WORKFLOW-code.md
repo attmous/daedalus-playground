@@ -51,6 +51,7 @@ runtime:
   thread_sandbox: workspace-write
   turn_sandbox_policy:
     type: workspaceWrite
+    networkAccess: true
 storage:
   state: .sprints/code-state.json
   audit-log: .sprints/code-audit.jsonl
