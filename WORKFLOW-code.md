@@ -39,6 +39,9 @@ concurrency:
   per-lane-lock: true
 limits:
   max_turns: 20
+retry:
+  max-attempts: 6
+  initial-delay-seconds: 0
 runtime:
   kind: codex-app-server
   mode: external
